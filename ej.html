@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae - Epa Juariah</title>
+  <style>
+/* Font lebih ekspresif */
+body {
+  font-family: 'Nunito', sans-serif; /* lebih lembut dan cozy */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fafafa, #f7f3fa);
+  color: #333;
+  display: flex;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; /* elegan untuk heading */
+  color: #6a4c93;
+}
+
+
+/* Kolom kiri untuk foto */
+.left {
+  width: 33.3%;
+  background: linear-gradient(180deg, #e0c3fc, #f7f3fa);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  position: fixed; /* selalu ada */
+  height: 100vh;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.05);
+}
+
+.left img {
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(106,76,147,0.3);
+  transition: transform 0.3s ease;
+}
+
+.left img:hover {
+  transform: scale(1.05);
+}
+
+/* Kolom kanan untuk konten */
+.right {
+  margin-left: 33.3%;
+  width: 66.7%;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff, #fdfdfd);
+  min-height: 100vh;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  color: #6a4c93;
+  margin-bottom: 0;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  color: #444;
+  margin-top: 5px;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #6a4c93;
+  border-bottom: 2px solid #e0c3fc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Navigasi */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+nav button {
+  background: linear-gradient(135deg, #6a4c93, #8a5bbf);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background: linear-gradient(135deg, #5a3c80, #6a4c93);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(106,76,147,0.3);
+}
+
+/* Section */
+section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 20px;
+  margin-bottom: 25px;
+  transition: opacity 0.3s ease;
+}
+ /* Section card */
+section {
+  display: none;
+  background: rgba(255,255,255,0.9); /* sedikit transparan agar menyatu dengan background */
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin-bottom: 25px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+section.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Heading */
+h3 {
+  font-family: 'Playfair Display', serif;
+  color: #6a4c93;
+  border-bottom: 2px solid #e0c3fc;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+/* Kolom kiri untuk foto */
+.left {
+  width: 33.3%;
+  background-image: url('bg-foto.png'); /* ganti dengan file background foto */
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.05);
+}
+
+.left img {
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(106,76,147,0.3);
+  transition: transform 0.3s ease;
+}
+
+.left img:hover {
+  transform: scale(1.05);
+}
+
+/* Kolom kanan untuk konten */
+.right {
+  margin-left: 33.3%;
+  width: 66.7%;
+  padding: 30px;
+  background-image: url('bg-konten.png'); /* ganti dengan file background konten */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* Navigasi */
+nav {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.menu-toggle {
+  display: none; /* default: sembunyikan di desktop */
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #6a4c93;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background-color: #5a3c80;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.menu-items button {
+  background: linear-gradient(135deg, #6a4c93, #8a5bbf);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.menu-items button:hover {
+  background: linear-gradient(135deg, #5a3c80, #6a4c93);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(106,76,147,0.3);
+}
+
+/* Responsif untuk HP */
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .left {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+  }
+
+  .left img {
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  .right {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+
+  .menu-items button {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Kolom kiri -->
+  <div class="left">
+    <img src="img.jpeg" alt="Foto Epa Juariah">
+  </div>
+
+  <!-- Kolom kanan -->
+  <div class="right">
+    <h1>Curriculum Vitae</h1>
+    <h2>Epa Juariah</h2>
+
+<!-- Navigasi -->
+<nav>
+  <!-- tombol hamburger -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  
+  <!-- daftar menu -->
+  <div class="menu-items" id="menu">
+    <button onclick="showSection('pribadi')">Data Pribadi</button>
+    <button onclick="showSection('profil')">Profil Singkat</button>
+    <button onclick="showSection('pendidikan')">Pendidikan</button>
+    <button onclick="showSection('pengalaman')">Pengalaman Kerja</button>
+    <button onclick="showSection('organisasi')">Organisasi</button>
+    <button onclick="showSection('prestasi')">Prestasi</button>
+    <button onclick="showSection('keahlian')">Keahlian</button>
+    <button onclick="showSection('bahasa')">Bahasa</button>
+    <button onclick="showSection('referensi')">Referensi</button>
+  </div>
+</nav>
+
+    <!-- Section Data Pribadi -->
+    <section id="pribadi">
+      <h3>Data Pribadi</h3>
+      <p><strong>Nama Lengkap:</strong> Epa Juariah</p>
+      <p><strong>Tempat, Tanggal Lahir:</strong> Garut, 11 November 1997</p>
+      <p><strong>Jenis Kelamin:</strong> Perempuan</p>
+      <p><strong>Status:</strong> Menikah</p>
+      <p><strong>Agama:</strong> Islam</p>
+      <p><strong>Alamat:</strong> Gg. Hamid No. 25d RT. 01 RW. 03 Desa Sindangpanon Kecamatan Banjaran</p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/epajuariah" target="_blank">@epajuariah</a></p>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/epajuariah" target="_blank">Epa Juariah</a></p>
+      <p><strong>Email:</strong> <a href="mailto:epajuariah@gmail.com">epajuariah@gmail.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/6282129064193" target="_blank">0821-2906-4193</a></p>
+      <p><strong>Telepon:</strong> <a href="tel:+6282129064193" target="_blank">0821-2906-4193</a></p>      
+    </section>
+
+    <!-- Section lain -->
+    <section id="profil">
+      <h3>Profil Singkat</h3>
+      <p>
+        Individu yang berdedikasi, adaptif, dan kreatif dengan pengalaman di bidang pendidikan, jurnalistik, serta industri kreatif. 
+        Saat ini juga merupakan <strong><a href="index.html" target="_blank">Founder Anara Home Decor</a></strong>, 
+        sebuah brand yang berfokus pada desain interior dan dekorasi rumah.
+      </p>
+    </section>
+    
+
+    <section id="pendidikan">
+      <h3>Pendidikan</h3>
+      <ul>
+        <li>SDN 031 Pekanbaru (2004–2010)</li>
+        <li>SMPN 09 Pekanbaru (2010–2013)</li>
+        <li>SMAN 05 Pekanbaru (2013–2016)</li>
+        <li>STIT Al-Ihsan Baleendah – MPI (2017–Sekarang)</li>
+        <li>Ponpes Tarbiyatul Aulad, Garut (2016)</li>
+      </ul>
+    </section>
+
+    <section id="pengalaman" style="display:none;">
+    <h3>Pengalaman Kerja</h3>
+    <ul>
+      <li>Guru Privat SMA (Matematika, Fisika, Kimia) – 2016</li>
+      <li>Guru Taman Pendidikan Qur’an Al-Huda – 2018–2020</li>
+      <li>Freelance: Content Creator, Digital Marketing, Industri Kreatif – 2021–Sekarang</li>
+    </ul>
+  </section>
+
+  <section id="organisasi" style="display:none;">
+    <h3>Organisasi & Kepanitiaan</h3>
+    <ul>
+      <li>Wakil Ketua Pusdiklat Paskibra Muda se-Kota Pekanbaru (2012–2013)</li>
+      <li>Tim Jurnalistik SMAN 05 Pekanbaru – Wakil Ketua, Reporter (2013–2016)</li>
+      <li>Tim Jurnalistik Pelajar “School Update” Riau Televisi – Sekretaris, Presenter (2015–2016)</li>
+      <li>Tim Admin Web SMAN 05 Pekanbaru – Penulis (2015–2016)</li>
+      <li>Panitia Ekspedisi Pedalaman Sibolga – Riau Televisi</li>
+      <li>Panitia ASAP VIII STIT Al-Ihsan Baleendah (2017)</li>
+      <li>Peserta Microteaching CSRC UIN Jakarta (2018)</li>
+      <li>Komunitas Generasi Pejuang Quran – Relawan, Multimedia, Branding (2020–Sekarang)</li>
+    </ul>
+  </section>
+
+  <section id="prestasi" style="display:none;">
+    <h3>Prestasi</h3>
+    <ul>
+      <li>Juara kelas secara konsisten</li>
+      <li>Pemenang berbagai kompetisi sekolah/daerah (Paskibraka, 4 Pilar, bidang keagamaan, dll.)</li>
+    </ul>
+  </section>
+
+  <section id="keahlian" style="display:none;">
+    <h3>Keahlian</h3>
+    <ul>
+      <li>Komunikasi interpersonal</li>
+      <li>Menulis & Jurnalistik</li>
+      <li>Pengajaran & Pendidikan</li>
+      <li>Manajemen & Organisasi</li>
+      <li>Fotografi & Videografi</li>
+      <li>Content Creation & Digital Marketing</li>
+    </ul>
+  </section>
+
+  <section id="bahasa" style="display:none;">
+    <h3>Kemampuan Bahasa</h3>
+    <ul>
+      <li>Bahasa Indonesia – Sangat Baik</li>
+      <li>Bahasa Inggris – Baik</li>
+    </ul>
+  </section>
+
+  <section id="referensi" style="display:none;">
+    <h3>Referensi</h3>
+    <p>Tersedia atas permintaan.</p>
+  </section>
+
+
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.style.display = "none");
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = "block";
+        window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+      }
+    }
+
+    // Default tampilkan Data Pribadi
+    window.onload = function() {
+      showSection('pribadi');
+    }
+
+    function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('show');
+}
+
+  </script>
+
+</body>
+</html>
